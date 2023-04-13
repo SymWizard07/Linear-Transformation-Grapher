@@ -6,6 +6,7 @@ const board = JXG.JSXGraph.initBoard('jxgbox', {
     boundingbox: [-5, 5, 5, -5], axis: true
 });
 
+var determinant = 0;
 var A = board.create('point', [0, 1]);
 var B = board.create('point', [1, 1]);
 var C = board.create('point', [0, 0]);
@@ -34,6 +35,7 @@ function applyTransformation() {
     C.moveTo([C.X() * linearTransform[0][0] + C.Y() * linearTransform[0][1], C.Y() * linearTransform[1][0] + C.Y() * linearTransform[1][1]]);
     D.moveTo([D.X() * linearTransform[0][0] + D.Y() * linearTransform[0][1], D.Y() * linearTransform[1][0] + D.Y() * linearTransform[1][1]]);
 
+    det();
     board.update();
 }
 
@@ -42,6 +44,11 @@ function resetUnitSquare() {
     B.moveTo([1, 1]);
     C.moveTo([0, 0]);
     D.moveTo([1, 0]);
+}
+
+function det() {
+    determinant = linearTransform[0][0]*linearTransform[1][1] - linearTransform[0][1]*linearTransform[1][0];
+    document.getElementById("det").textContent = "Determinant = " + determinant;
 }
 
 window.onload = function () {
