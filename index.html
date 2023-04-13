@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div style="display: flex;">
+        <div id="jxgbox" class="jxgbox" style="width:500px; height:500px; border: 2px solid black;">
+        </div>
+        <button onclick="resetUnitSquare();">Reset Unit Square</button>
+    </div>
+
+    <div id="transformation-container">
+        <h3>
+            Enter Linear Transformation Matrix Below:
+        </h3>
+        <div id="matrix-row">
+            <span>Row 1:</span>
+            <input type="number" value="1" class="A" onchange="linearTransform[0][0] = parseFloat(this.value);">
+            <input type="number" value="0" class="B" onchange="linearTransform[0][1] = parseFloat(this.value);">
+        </div>
+        <div id="matrix-row">
+            <span>Row 2:</span>
+            <input type="number" value="0" class="C" onchange="linearTransform[1][0] = parseFloat(this.value);">
+            <input type="number" value="1" class="D" onchange="linearTransform[1][1] = parseFloat(this.value);">
+        </div>
+    </div>
+    <div>
+        <button onclick="applyTransformation();">Apply Transformation</button>
+    </div>
+</body>
+
+<script src="jsxgraphcore.js"></script>
+<script src="main.js"></script>
+
+</html>
