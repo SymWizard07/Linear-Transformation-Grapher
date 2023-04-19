@@ -51,6 +51,7 @@ function det() {
     document.getElementById("det").textContent = "Determinant = " + determinant;
 }
 
+
 window.onload = function () {
     document.querySelector(".A").value = 1;
     document.querySelector(".B").value = 0;
